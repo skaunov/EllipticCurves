@@ -16,7 +16,7 @@ class EllipticCurve:
     """
     Object of an elliptic curve over prime fields (Montgomery & Weierstrass equations only)
     - attributes : (str) name, (int) order, (int) a2, (int) a4, (int) a6, (int) p, (str) type
-    - methods : *init, *repr, *str, discriminant, is_smooth, *contains
+    - methods : *init, *repr, *str, discriminant, is_smooth, *contains, *eq, *ne
     """
 
     def __init__(self, name='Secp256k1', order=2**256 - 0x14551231950b75fc4402da1732fc9bebf,
@@ -117,7 +117,7 @@ class Point:
     """
     Point of an elliptic curve
     - attributes : (int) x, (int) y, (str) type, (EllipticCurve object) curve
-    - methods : *init, *repr, *str, *eq, *ne, neg, *add, *radd, *iadd, *mul, *rmul
+    - methods : *init, *repr, *str, *eq, *ne, *neg, *add, *radd, *iadd, *sub, *isub, *mul, *rmul
     """
 
     def __init__(self, curve=EllipticCurve(), x=None, y=None):
