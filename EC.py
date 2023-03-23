@@ -92,7 +92,7 @@ class EllipticCurve:
         - input: (Point object) point
         - output: (bool) True point is on the curve
         """
-        return pow(point.y, 2, self.p) == (point.x**3 + self.a2*point.x**2 + self.a4*point.x + self.a6) % self.p
+        return point.type == "infinite" || pow(point.y, 2, self.p) == (point.x**3 + self.a2*point.x**2 + self.a4*point.x + self.a6) % self.p
 
     def __eq__(self, curve):
         """
